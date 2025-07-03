@@ -1,4 +1,4 @@
-package org.kurt
+package org.kurt.service
 
 import mu.KotlinLogging
 import java.math.BigDecimal

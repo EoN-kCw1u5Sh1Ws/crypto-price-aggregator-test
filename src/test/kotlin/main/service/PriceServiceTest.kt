@@ -1,8 +1,8 @@
-package main
+package main.service
 
 import org.junit.jupiter.api.TestInstance
-import org.kurt.PriceData
-import org.kurt.PriceService
+import org.kurt.service.PriceData
+import org.kurt.service.PriceService
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -108,6 +108,6 @@ class PriceServiceTest {
         )
     }
 
-    private fun randomTimestamp() = Clock.System.now() - Random.nextLong(365 * 24 * 60 * 60 * 1000).milliseconds
+    private fun randomTimestamp() = Clock.System.now() - Random.Default.nextLong(365 * 24 * 60 * 60 * 1000).milliseconds
 
 }

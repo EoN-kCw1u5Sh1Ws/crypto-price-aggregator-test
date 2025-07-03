@@ -6,19 +6,29 @@
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <option name="gradleHome" value="" />
 >>>>>>> 0308b58 (Initial commit)
+=======
+>>>>>>> 1069f8c (wip)
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/integration-test" />
+            <option value="$PROJECT_DIR$/src" />
+            <option value="$PROJECT_DIR$/src/integration-test" />
           </set>
         </option>
       </GradleProjectSettings>
     </option>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="parallelModelFetch" value="true" />
 =======
 >>>>>>> 0308b58 (Initial commit)
+=======
+    <option name="parallelModelFetch" value="true" />
+>>>>>>> 1069f8c (wip)
   </component>
 </project>

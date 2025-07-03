@@ -1,10 +1,13 @@
-package org.kurt
+package org.kurt.controller
 
+import com.beust.klaxon.json
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.response.respond
-import com.beust.klaxon.json
 import mu.KotlinLogging
+import org.kurt.ws.BitstampLiveTradeWebSocketClient
+import org.kurt.service.PriceData
+import org.kurt.service.PriceService
 
 object PriceController {
 
@@ -12,28 +15,28 @@ object PriceController {
 
     suspend fun ApplicationCall.handleGetPrice(symbol: String) = PriceService.getPrice(symbol)?.let {
         LOG.info("got price data for symbol:$symbol data:$it")
-        respond(it.toJson())
+        respond(HttpStatusCode.Companion.OK, it.toJson().toJsonString())
     } ?: run {
         LOG.info("No price for $symbol")
-        respond(HttpStatusCode.NotFound, mapOf("error" to "No price for $symbol"))
+        respond(HttpStatusCode.Companion.NotFound, "No price for $symbol")
     }
 
     suspend fun ApplicationCall.handleSubscribeToSymbol(symbol: String) =
-        BitstampWebSocketClient.subscribeToLiveTradesForSymbol(symbol).also {
+        BitstampLiveTradeWebSocketClient.subscribeToLiveTradesForSymbol(symbol).also {
             LOG.info("requested subscription to $symbol")
-            respond("Success")
+            respond(HttpStatusCode.Companion.OK, "Subscribed to $symbol")
         }
 
     suspend fun ApplicationCall.handleUnsubscribeToSymbol(symbol: String) =
-        BitstampWebSocketClient.subscribeToLiveTradesForSymbol(symbol).also {
+        BitstampLiveTradeWebSocketClient.subscribeToLiveTradesForSymbol(symbol).also {
             LOG.info("requested unsubscription to $symbol")
-            respond("Success")
+            respond(HttpStatusCode.Companion.OK, "Unsubscribed to $symbol")
         }
 
     private fun PriceData.toJson() = json {
-        obj (
+        obj(
             "symbol" to symbol,
-            "price" to price,
+            "price" to price.toString(),
             "updatedAt" to updatedAt
         )
     }

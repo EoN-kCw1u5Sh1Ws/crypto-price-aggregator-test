@@ -1,4 +1,4 @@
-package main
+package main.client.websocket
 
 import kotlin.test.Test
 

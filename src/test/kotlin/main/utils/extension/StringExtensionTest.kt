@@ -1,6 +1,6 @@
-package main.extension
+package main.utils.extension
 
-import org.kurt.extension.timestampMillisToISO8601
+import org.kurt.utils.extension.timestampMillisToISO8601
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

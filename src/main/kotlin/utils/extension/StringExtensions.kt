@@ -1,4 +1,4 @@
-package org.kurt.extension
+package org.kurt.utils.extension
 
 import kotlin.time.ExperimentalTime
 import kotlin.time.Instant

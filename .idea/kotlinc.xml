@@ -2,9 +2,13 @@
 <project version="4">
   <component name="KotlinJpsPluginSettings">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="version" value="2.2.0" />
 =======
     <option name="version" value="2.1.21" />
 >>>>>>> 0308b58 (Initial commit)
+=======
+    <option name="version" value="2.2.0" />
+>>>>>>> 1069f8c (wip)
   </component>
 </project>

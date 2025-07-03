@@ -2,7 +2,7 @@ package org.kurt
 
 import io.ktor.http.HttpStatusCode
 import kotlinx.coroutines.launch
-import org.kurt.PriceController.handleGetPrice
+import org.kurt.controller.PriceController.handleGetPrice
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.routing.get
 import io.ktor.server.netty.Netty
@@ -15,8 +15,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.runBlocking
 import mu.KotlinLogging
-import org.kurt.PriceController.handleSubscribeToSymbol
-import org.kurt.PriceController.handleUnsubscribeToSymbol
+import org.kurt.controller.PriceController.handleSubscribeToSymbol
+import org.kurt.controller.PriceController.handleUnsubscribeToSymbol
+import org.kurt.ws.BitstampLiveTradeWebSocketClient
 
 private val LOG = KotlinLogging.logger {}
 
@@ -35,11 +36,11 @@ fun main() = runBlocking {
 }
 
 private fun setupServer() = scope.launch {
-    BitstampWebSocketClient.subscribeToLiveTradesForSymbols(
+    BitstampLiveTradeWebSocketClient.subscribeToLiveTradesForSymbols(
         listOf("btcusd", "ethusd", "ethbtc")
     )
 
-    BitstampWebSocketClient.initialise()
+    BitstampLiveTradeWebSocketClient.initialise()
 }
 
 private fun setupEndpoints() = scope.launch {

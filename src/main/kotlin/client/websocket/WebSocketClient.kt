@@ -1,13 +1,19 @@
-package org.kurt
+package org.kurt.client.websocket
 
-import io.ktor.client.*
+import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
-import io.ktor.client.plugins.websocket.*
-
-import io.ktor.websocket.*
-import kotlinx.coroutines.*
+import io.ktor.client.plugins.websocket.WebSockets
+import io.ktor.client.plugins.websocket.pingInterval
+import io.ktor.client.plugins.websocket.webSocket
+import io.ktor.websocket.Frame
+import io.ktor.websocket.readText
+import io.ktor.websocket.send
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
 object WebSocketClient {
@@ -31,18 +37,20 @@ object WebSocketClient {
             }
 
             // receiver coroutine
-            launch {
+//            launch {
                 for (frame in incoming) {
                     when (frame) {
                         is Frame.Text -> {
                             val text = frame.readText()
                             println("Received: $text")
+                            emit(text)
                         }
+
                         is Frame.Close -> break // TODO: Handle
                         else -> {}
                     }
                 }
-            }
+//            }
         }
     }.flowOn(Dispatchers.IO)
 

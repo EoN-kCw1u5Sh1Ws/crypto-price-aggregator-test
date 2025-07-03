@@ -1,8 +1,9 @@
 import org.gradle.kotlin.dsl.testImplementation
 
 plugins {
-    kotlin("jvm") version "2.1.21"
+    kotlin("jvm") version "2.2.0"
     id("org.graalvm.buildtools.native") version "0.10.3"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "org.kurt"
@@ -30,8 +31,6 @@ dependencies {
     // logging
     implementation("ch.qos.logback:logback-classic:1.5.18")
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
-    // graalvm
-    implementation("org.graalvm.nativeimage:svm:23.0.0")
     // test
     testImplementation(kotlin("test"))
     testImplementation("io.mockk:mockk:1.13.17")
@@ -51,20 +50,33 @@ kotlin {
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(javaVersion))
-        vendor.set(JvmVendorSpec.GRAAL_VM)
+    }
+}
+
+tasks.shadowJar {
+    archiveClassifier.set("all")
+    manifest {
+        attributes["Main-Class"] = "org.kurt.MainKt"
     }
 }
 
 graalvmNative {
-    toolchainDetection.set(false)
+    toolchainDetection.set(true)
     binaries {
         named("main") {
             imageName.set("crypto-price-aggregator")
             mainClass.set("org.kurt.MainKt")
             buildArgs.addAll(
+                "--report-unsupported-elements-at-runtime",
                 "--no-fallback",
                 "--report-unsupported-elements-at-runtime",
-                "--allow-incomplete-classpath"
+                // Initializes runtime classes during compilation rather than at application startup.
+                // Improves startup time and reduces runtime overhead, prevents configuration issues at runtime.
+                "--initialize-at-build-time=kotlin",
+                "--initialize-at-build-time=kotlinx.coroutines",
+                "--initialize-at-build-time=ch.qos.logback",
+                "-H:+AddAllCharsets",
+                "--enable-url-protocols=http,https"
             )
         }
     }
