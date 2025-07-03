@@ -18,6 +18,10 @@ It has been built and designed with the intention of being a small example appli
 - **Java 21** (required for compilation and runtime)
 - **Docker** or **Podman** (optional, for containerized deployment)
 
+## Known issues
+
+- **Integration tests on github** - We are currently skipping the Integration Tests on Github builds as it fails consistently. They pass locally however.
+
 ## Configuration
 
 Create a `.env` file in the root directory with the following properties:
