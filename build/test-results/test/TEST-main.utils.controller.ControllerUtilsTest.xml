@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.utils.controller.ControllerUtilsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-07-03T09:21:00.922Z" hostname="desktop" time="0.008">
+  <properties/>
+  <testcase name="symbol from validSymbols is valid()" classname="main.utils.controller.ControllerUtilsTest" time="0.003"/>
+  <testcase name="blank symbol is not valid()" classname="main.utils.controller.ControllerUtilsTest" time="0.002"/>
+  <testcase name="symbol not in valid symbols is not valid()" classname="main.utils.controller.ControllerUtilsTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

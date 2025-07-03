@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.client.bitstamp.BitstampLiveTradeWebSocketClientTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-07-03T09:20:59.695Z" hostname="desktop" time="0.871">
+  <properties/>
+  <testcase name="should send subscribe messages for one symbol()" classname="main.client.bitstamp.BitstampLiveTradeWebSocketClientTest" time="0.366"/>
+  <testcase name="should send subscribe messages for all symbols()" classname="main.client.bitstamp.BitstampLiveTradeWebSocketClientTest" time="0.106"/>
+  <testcase name="should send unsubscribe messages for one symbol()" classname="main.client.bitstamp.BitstampLiveTradeWebSocketClientTest" time="0.105"/>
+  <testcase name="should process messages()" classname="main.client.bitstamp.BitstampLiveTradeWebSocketClientTest" time="0.184"/>
+  <testcase name="should send unsubscribe messages for all symbols()" classname="main.client.bitstamp.BitstampLiveTradeWebSocketClientTest" time="0.106"/>
+  <system-out><![CDATA[2025-07-03 10:20:59 [DefaultDispatcher-worker-1 @BitstampClient#139] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.JobCancellationException: Parent job is Completed; job=SupervisorJobImpl{Completed}@282998ef
+2025-07-03 10:20:59 [DefaultDispatcher-worker-1 @BitstampClient#139] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:21:00 [DefaultDispatcher-worker-1 @BitstampClient#146] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.JobCancellationException: Parent job is Completed; job=SupervisorJobImpl{Completed}@278fb721
+2025-07-03 10:21:00 [DefaultDispatcher-worker-1 @BitstampClient#146] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:21:00 [DefaultDispatcher-worker-1 @BitstampClient#154] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.JobCancellationException: Parent job is Completed; job=SupervisorJobImpl{Completed}@4baed207
+2025-07-03 10:21:00 [DefaultDispatcher-worker-1 @BitstampClient#154] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:21:00 [DefaultDispatcher-worker-12 @BitstampClient#161] INFO  o.k.c.b.BitstampLiveTradeWebSocketClient - received: {"channel":"live_trades_btcusd","data":{"price_str":"100.00","timestamp":1751534460}}
+2025-07-03 10:21:00 [DefaultDispatcher-worker-12 @BitstampClient#161] INFO  o.k.c.b.BitstampLiveTradeWebSocketClient - received: {"channel":"live_trades_ethusd","data":{"price_str":"150.00","timestamp":1751534460}}
+2025-07-03 10:21:00 [DefaultDispatcher-worker-12 @BitstampClient#164] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.JobCancellationException: Parent job is Completed; job=SupervisorJobImpl{Completed}@1e7eb269
+2025-07-03 10:21:00 [DefaultDispatcher-worker-12 @BitstampClient#164] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/kurt/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.17/e3c251a39dc90badaf71c83427ba46840f219d8d/byte-buddy-agent-1.14.17.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

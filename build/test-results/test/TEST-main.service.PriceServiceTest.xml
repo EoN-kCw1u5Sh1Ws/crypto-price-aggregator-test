@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.service.PriceServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-07-03T09:21:00.917Z" hostname="desktop" time="0.004">
+  <properties/>
+  <testcase name="should update price data()" classname="main.service.PriceServiceTest" time="0.002"/>
+  <testcase name="should clear data()" classname="main.service.PriceServiceTest" time="0.001"/>
+  <testcase name="should store price data()" classname="main.service.PriceServiceTest" time="0.001"/>
+  <system-out><![CDATA[2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:ethusd data:null priceDataBySymbol:{}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Updated price: PriceData(symbol=ethusd, price=10.00, updatedAt=2025-07-02T23:40:51.865762080Z)
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:ethusd data:PriceData(symbol=ethusd, price=10.00, updatedAt=2025-07-02T23:40:51.865762080Z) priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-07-02T23:40:51.865762080Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Updated price: PriceData(symbol=ethusd, price=15.00, updatedAt=2025-06-29T08:17:30.855272820Z)
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:ethusd data:PriceData(symbol=ethusd, price=15.00, updatedAt=2025-06-29T08:17:30.855272820Z) priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=15.00, updatedAt=2025-06-29T08:17:30.855272820Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Updated price: PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-18T14:33:17.577095142Z)
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Updated price: PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z)
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:btcusd data:PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-18T14:33:17.577095142Z) priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z), btcusd=PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-18T14:33:17.577095142Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:ethusd data:PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z) priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z), btcusd=PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-18T14:33:17.577095142Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:btcusd data:null priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:ethusd data:PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z) priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:btcusd data:null priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z)}
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Updated price: PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-22T19:32:06.271305821Z)
+2025-07-03 10:21:00 [Test worker] INFO  org.kurt.service.PriceService - Getting price for symbol:btcusd data:PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-22T19:32:06.271305821Z) priceDataBySymbol:{ethusd=PriceData(symbol=ethusd, price=10.00, updatedAt=2025-06-19T09:21:04.262112455Z), btcusd=PriceData(symbol=btcusd, price=10.00, updatedAt=2025-06-22T19:32:06.271305821Z)}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

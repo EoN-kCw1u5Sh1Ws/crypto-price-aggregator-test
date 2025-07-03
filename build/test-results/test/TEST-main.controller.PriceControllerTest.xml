@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.controller.PriceControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-03T09:21:00.569Z" hostname="desktop" time="0.136">
+  <properties/>
+  <testcase name="should return 200 and price data if price found()" classname="main.controller.PriceControllerTest" time="0.136"/>
+  <system-out><![CDATA[2025-07-03 10:21:00 [Test worker @coroutine#174] INFO  org.kurt.controller.PriceController - got price data for symbol:btcusd data:PriceData(symbol=btcusd, price=10.00, updatedAt=updatedAt)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

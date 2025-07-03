@@ -1,0 +1,4 @@
+[engine:junit-jupiter]/[class:integrationtest.WebSocketClientIntegrationTest]/[test-template:should receive messages from websocket(java.util.List)]/[test-template-invocation:#1]
+[engine:junit-jupiter]/[class:integrationtest.WebSocketClientIntegrationTest]/[test-template:should receive messages from websocket(java.util.List)]/[test-template-invocation:#2]
+[engine:junit-jupiter]/[class:integrationtest.WebSocketClientIntegrationTest]/[test-template:should send one message to websocket(java.util.List)]/[test-template-invocation:#1]
+[engine:junit-jupiter]/[class:integrationtest.WebSocketClientIntegrationTest]/[test-template:should send one message to websocket(java.util.List)]/[test-template-invocation:#2]

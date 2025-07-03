@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.controller.SubscriptionControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-07-03T09:21:00.815Z" hostname="desktop" time="0.021">
+  <properties/>
+  <testcase name="should return 200 and correct message when unsubscribing to symbol()" classname="main.controller.SubscriptionControllerTest" time="0.013"/>
+  <testcase name="should return 200 and correct message when subscribing to symbol()" classname="main.controller.SubscriptionControllerTest" time="0.008"/>
+  <system-out><![CDATA[2025-07-03 10:21:00 [Test worker @coroutine#202] INFO  o.k.c.SubscriptionController - requested unsubscription to symbol:btcusd
+2025-07-03 10:21:00 [Test worker @coroutine#209] INFO  o.k.c.SubscriptionController - requested subscription to btcusd
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
