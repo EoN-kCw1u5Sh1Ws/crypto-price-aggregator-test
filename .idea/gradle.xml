@@ -5,6 +5,10 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
+=======
+        <option name="gradleHome" value="" />
+>>>>>>> 0308b58 (Initial commit)
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -12,6 +16,9 @@
         </option>
       </GradleProjectSettings>
     </option>
+<<<<<<< HEAD
     <option name="parallelModelFetch" value="true" />
+=======
+>>>>>>> 0308b58 (Initial commit)
   </component>
 </project>
