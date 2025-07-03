@@ -17,11 +17,11 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.TestInstance
+import org.kurt.client.bitstamp.BitstampLiveTradeWebSocketClient
 import org.kurt.client.websocket.WebSocketClient
-import org.kurt.utils.extension.timestampMillisToISO8601
+import org.kurt.utils.extension.timestampSecondsToISO8601
 import org.kurt.service.PriceData
 import org.kurt.service.PriceService
-import org.kurt.ws.BitstampLiveTradeWebSocketClient
 import java.math.BigDecimal
 import kotlin.test.Test
 import kotlin.test.assertContains
@@ -48,8 +48,9 @@ class BitstampLiveTradeWebSocketClientTest {
         val outgoingChannel = mockk<Channel<String>>()
         coEvery { outgoingChannel.send(any()) } returns Unit
 
-        BitstampLiveTradeWebSocketClient.initialise(outgoingChannel)
-        BitstampLiveTradeWebSocketClient.subscribeToLiveTradesForSymbols(symbols)
+        BitstampLiveTradeWebSocketClient
+            .initialiseConnection(outgoingChannel)
+            .subscribeToLiveTradesForSymbols(symbols)
 
         val sentMessages = outgoingChannel.waitForSentMessages(2)
 
@@ -63,8 +64,9 @@ class BitstampLiveTradeWebSocketClientTest {
         val outgoingChannel = mockk<Channel<String>>()
         coEvery { outgoingChannel.send(any()) } returns Unit
 
-        BitstampLiveTradeWebSocketClient.initialise(outgoingChannel)
-        BitstampLiveTradeWebSocketClient.subscribeToLiveTradesForSymbol("btcusd")
+        BitstampLiveTradeWebSocketClient
+            .initialiseConnection(outgoingChannel)
+            .subscribeToLiveTradesForSymbol("btcusd")
 
         val sentMessages = outgoingChannel.waitForSentMessages(1)
         Assertions.assertEquals(1, sentMessages.size)
@@ -78,8 +80,9 @@ class BitstampLiveTradeWebSocketClientTest {
         val outgoingChannel = mockk<Channel<String>>()
         coEvery { outgoingChannel.send(any()) } returns Unit
 
-        BitstampLiveTradeWebSocketClient.initialise(outgoingChannel)
-        BitstampLiveTradeWebSocketClient.unsubscribeToLiveTradesForSymbols(symbols)
+        BitstampLiveTradeWebSocketClient
+            .initialiseConnection(outgoingChannel)
+            .unsubscribeToLiveTradesForSymbols(symbols)
 
         val sentMessages = outgoingChannel.waitForSentMessages(2)
         Assertions.assertEquals(2, sentMessages.size)
@@ -92,8 +95,9 @@ class BitstampLiveTradeWebSocketClientTest {
         val outgoingChannel = mockk<Channel<String>>()
         coEvery { outgoingChannel.send(any()) } returns Unit
 
-        BitstampLiveTradeWebSocketClient.initialise(outgoingChannel)
-        BitstampLiveTradeWebSocketClient.unsubscribeToLiveTradesForSymbol("ethusd")
+        BitstampLiveTradeWebSocketClient
+            .initialiseConnection(outgoingChannel)
+            .unsubscribeToLiveTradesForSymbol("ethusd")
 
         val sentMessages = outgoingChannel.waitForSentMessages(1)
 
@@ -109,11 +113,20 @@ class BitstampLiveTradeWebSocketClientTest {
         val ethusdTimestamp = secondsTimestamp()
 
         every { WebSocketClient.messagesAsFlow(any(), any()) } returns flowOf(
-            priceDataJsonString("btcusd", "100.00".toBigDecimal(), btcusdTimestamp),
-            priceDataJsonString("ethusd", "150.00".toBigDecimal(), ethusdTimestamp)
+            priceDataJsonString(
+                "btcusd",
+                "100.00".toBigDecimal(),
+                btcusdTimestamp
+            ),
+            priceDataJsonString(
+                "ethusd",
+                "150.00".toBigDecimal(),
+                ethusdTimestamp
+            )
         )
 
-        BitstampLiveTradeWebSocketClient.initialise()
+        BitstampLiveTradeWebSocketClient
+            .initialiseConnection()
 
         val slot = waitForReceivedMessages()
 
@@ -122,7 +135,7 @@ class BitstampLiveTradeWebSocketClientTest {
             PriceData(
                 "btcusd",
                 "100.00".toBigDecimal(),
-                btcusdTimestamp.timestampMillisToISO8601()
+                btcusdTimestamp.timestampSecondsToISO8601()
 
             ),
             slot[0]
@@ -131,7 +144,7 @@ class BitstampLiveTradeWebSocketClientTest {
             PriceData(
                 "ethusd",
                 "150.00".toBigDecimal(),
-                ethusdTimestamp.timestampMillisToISO8601()
+                ethusdTimestamp.timestampSecondsToISO8601()
 
             ),
             slot[1]
@@ -183,8 +196,12 @@ class BitstampLiveTradeWebSocketClientTest {
     ) = json {
         obj(
             "channel" to "live_trades_${symbol.lowercase()}",
-            "price_str" to price.toString(),
-            "timestamp" to timestamp
+            "data" to json {
+                obj(
+                    "price_str" to price.toString(),
+                    "timestamp" to timestamp
+                )
+            }
         )
     }.toJsonString()
 

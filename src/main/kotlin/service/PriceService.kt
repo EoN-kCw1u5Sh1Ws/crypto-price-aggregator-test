@@ -23,7 +23,7 @@ object PriceService {
 
     fun getPrice(symbol: String): PriceData? =
         priceDataBySymbol.getOrElse(symbol) { null }.also {
-            LOG.info("Getting price for symbol:$symbol data:$it")
+            LOG.info("Getting price for symbol:$symbol data:$it priceDataBySymbol:$priceDataBySymbol")
         }
 
     fun clearData(symbol: String) = priceDataBySymbol.remove(symbol)

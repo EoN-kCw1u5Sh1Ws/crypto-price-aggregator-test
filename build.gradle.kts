@@ -2,7 +2,6 @@ import org.gradle.kotlin.dsl.testImplementation
 
 plugins {
     kotlin("jvm") version "2.2.0"
-    id("org.graalvm.buildtools.native") version "0.10.3"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -36,6 +35,7 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.17")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
     testImplementation("org.awaitility:awaitility-kotlin:4.3.0")
+    testImplementation("io.ktor:ktor-server-test-host:${ktorVersion}")
 }
 
 tasks.test {
@@ -57,27 +57,5 @@ tasks.shadowJar {
     archiveClassifier.set("all")
     manifest {
         attributes["Main-Class"] = "org.kurt.MainKt"
-    }
-}
-
-graalvmNative {
-    toolchainDetection.set(true)
-    binaries {
-        named("main") {
-            imageName.set("crypto-price-aggregator")
-            mainClass.set("org.kurt.MainKt")
-            buildArgs.addAll(
-                "--report-unsupported-elements-at-runtime",
-                "--no-fallback",
-                "--report-unsupported-elements-at-runtime",
-                // Initializes runtime classes during compilation rather than at application startup.
-                // Improves startup time and reduces runtime overhead, prevents configuration issues at runtime.
-                "--initialize-at-build-time=kotlin",
-                "--initialize-at-build-time=kotlinx.coroutines",
-                "--initialize-at-build-time=ch.qos.logback",
-                "-H:+AddAllCharsets",
-                "--enable-url-protocols=http,https"
-            )
-        }
     }
 }
