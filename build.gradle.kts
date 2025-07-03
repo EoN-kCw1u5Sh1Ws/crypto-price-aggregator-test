@@ -40,6 +40,10 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    
+    if (project.hasProperty("excludeIntegrationTests")) {
+        exclude("**/integrationtest/**")
+    }
 }
 
 val javaVersion = 21

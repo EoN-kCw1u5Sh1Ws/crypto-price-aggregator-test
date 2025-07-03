@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.238s</div>
+<div class="counter">1.270s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,7 +81,7 @@
 <tr>
 <td class="success">[1] [Hello]</td>
 <td class="success">should receive messages from websocket(List)[1]</td>
-<td class="success">0.406s</td>
+<td class="success">0.436s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -93,7 +93,7 @@
 <tr>
 <td class="success">[1] [Hello]</td>
 <td class="success">should send one message to websocket(List)[1]</td>
-<td class="success">0.312s</td>
+<td class="success">0.314s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -107,79 +107,79 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2025-07-03 10:20:55 [Test worker] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-07-03 10:20:55 [Test worker] INFO  io.ktor.server.Application - Application started in 0.217 seconds.
-2025-07-03 10:20:55 [DefaultDispatcher-worker-2 @coroutine#2] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:43341
+<pre>2025-07-03 10:56:20 [Test worker] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-07-03 10:56:20 [Test worker] INFO  io.ktor.server.Application - Application started in 0.251 seconds.
+2025-07-03 10:56:20 [DefaultDispatcher-worker-1 @coroutine#2] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:44527
 serverSenderJob launched
 websocket ready
 serverReceivedJob launched
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:43341/test
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
+2025-07-03 10:56:20 [DefaultDispatcher-worker-3 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:44527/test
+2025-07-03 10:56:20 [DefaultDispatcher-worker-3 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
 serverSenderJob sending: Hello
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - Received: Hello
+2025-07-03 10:56:20 [DefaultDispatcher-worker-1 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - Received: Hello
 serverReceivedJob complete
-2025-07-03 10:20:56 [DefaultDispatcher-worker-3 @coroutine#8] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
-2025-07-03 10:20:56 [DefaultDispatcher-worker-3 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:56:20 [DefaultDispatcher-worker-8 @coroutine#8] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
+2025-07-03 10:56:20 [DefaultDispatcher-worker-8 @coroutine#8] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
 serverSenderJob launched
 serverReceivedJob launched
 websocket ready
-2025-07-03 10:20:56 [DefaultDispatcher-worker-10 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:43341/test
-2025-07-03 10:20:56 [DefaultDispatcher-worker-10 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
+2025-07-03 10:56:21 [DefaultDispatcher-worker-5 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:44527/test
+2025-07-03 10:56:21 [DefaultDispatcher-worker-5 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
 serverSenderJob sending: Hello1
 serverSenderJob sending: Hello2
 serverSenderJob sending: Hello3
 serverSenderJob sending: Hello4
 serverSenderJob sending: Hello5
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello1
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello2
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello3
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello4
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello5
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello1
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello2
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello3
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello4
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Received: Hello5
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
+2025-07-03 10:56:21 [DefaultDispatcher-worker-3 @coroutine#42] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
 serverReceivedJob complete
 serverSenderJob launched
-websocket ready
 serverReceivedJob launched
-2025-07-03 10:20:56 [DefaultDispatcher-worker-10 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:43341/test
-2025-07-03 10:20:56 [DefaultDispatcher-worker-10 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - starting sender coroutine
-2025-07-03 10:20:56 [DefaultDispatcher-worker-10 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - started sender coroutine
-2025-07-03 10:20:56 [DefaultDispatcher-worker-10 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @ws-default#99] INFO  o.k.client.websocket.WebSocketClient - Sender coroutine started
+websocket ready
+2025-07-03 10:56:21 [DefaultDispatcher-worker-7 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:44527/test
+2025-07-03 10:56:21 [DefaultDispatcher-worker-7 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - starting sender coroutine
+2025-07-03 10:56:21 [DefaultDispatcher-worker-7 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - started sender coroutine
+2025-07-03 10:56:21 [DefaultDispatcher-worker-7 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
+2025-07-03 10:56:21 [DefaultDispatcher-worker-8 @ws-default#99] INFO  o.k.client.websocket.WebSocketClient - Sender coroutine started
 serverSenderJob sending: Hello
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @ws-default#99] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello
-2025-07-03 10:20:56 [DefaultDispatcher-worker-1 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - Received: Hello
+2025-07-03 10:56:21 [DefaultDispatcher-worker-8 @ws-default#99] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello
+2025-07-03 10:56:21 [DefaultDispatcher-worker-6 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - Received: Hello
 received: Hello
 serverReceivedJob received: Hello
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @coroutine#74] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
 serverReceivedJob complete
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#74] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
-2025-07-03 10:20:56 [DefaultDispatcher-worker-6 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @coroutine#74] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
 serverSenderJob launched
 serverReceivedJob launched
 websocket ready
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:43341/test
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - starting sender coroutine
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - started sender coroutine
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
-2025-07-03 10:20:56 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sender coroutine started
+2025-07-03 10:56:21 [DefaultDispatcher-worker-4 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - WebSocket connected successfully to ws://localhost:44527/test
+2025-07-03 10:56:21 [DefaultDispatcher-worker-4 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - starting sender coroutine
+2025-07-03 10:56:21 [DefaultDispatcher-worker-4 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - started sender coroutine
+2025-07-03 10:56:21 [DefaultDispatcher-worker-4 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - setting up receiver
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sender coroutine started
 serverSenderJob sending: Hello
-2025-07-03 10:20:57 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello1
-2025-07-03 10:20:57 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello2
-2025-07-03 10:20:57 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello3
-2025-07-03 10:20:57 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello4
-2025-07-03 10:20:57 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello5
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello1
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello2
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello3
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello4
+2025-07-03 10:56:21 [DefaultDispatcher-worker-2 @ws-default#132] INFO  o.k.client.websocket.WebSocketClient - Sending: Hello5
+2025-07-03 10:56:21 [DefaultDispatcher-worker-1 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - Received: Hello
+received: Hello
 serverReceivedJob received: Hello1
 serverReceivedJob received: Hello2
-2025-07-03 10:20:57 [DefaultDispatcher-worker-4 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - Received: Hello
-received: Hello
 serverReceivedJob received: Hello3
 serverReceivedJob received: Hello4
 serverReceivedJob received: Hello5
 serverReceivedJob complete
-2025-07-03 10:20:57 [DefaultDispatcher-worker-14 @coroutine#107] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
-2025-07-03 10:20:57 [DefaultDispatcher-worker-14 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
-2025-07-03 10:20:57 [Test worker] INFO  o.k.client.websocket.WebSocketClient - Closing WebSocket client...
-2025-07-03 10:20:57 [Test worker] INFO  o.k.client.websocket.WebSocketClient - WebSocket client closed successfully
+2025-07-03 10:56:21 [DefaultDispatcher-worker-8 @coroutine#107] ERROR o.k.client.websocket.WebSocketClient - WebSocket connection failed: kotlinx.coroutines.flow.internal.AbortFlowException: Flow was aborted, no more elements needed
+2025-07-03 10:56:21 [DefaultDispatcher-worker-8 @coroutine#107] INFO  o.k.client.websocket.WebSocketClient - Reconnecting in 2000ms (attempt 1/10)
+2025-07-03 10:56:21 [Test worker] INFO  o.k.client.websocket.WebSocketClient - Closing WebSocket client...
+2025-07-03 10:56:21 [Test worker] INFO  o.k.client.websocket.WebSocketClient - WebSocket client closed successfully
 </pre>
 </span>
 </div>
@@ -191,7 +191,7 @@ serverReceivedJob complete
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at 3 Jul 2025, 10:21:00</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at 3 Jul 2025, 10:56:23</p>
 </div>
 </div>
 </body>

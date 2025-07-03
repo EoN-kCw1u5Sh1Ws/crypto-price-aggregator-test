@@ -15,10 +15,10 @@ object PriceController {
 
     suspend fun ApplicationCall.handleGetPrice(symbol: String) = validateSymbol(symbol, LOG) {
         PriceService.getPrice(symbol)?.let {
-            LOG.info("got price data for symbol:$symbol data:$it")
+            LOG.info { "got price data for symbol:$symbol data:$it" }
             respond(HttpStatusCode.Companion.OK, it.toJson().toJsonString())
         } ?: run {
-            LOG.info("No price for $symbol")
+            LOG.info { "No price for $symbol" }
             respond(HttpStatusCode.Companion.NotFound, "No price for $symbol")
         }
     }

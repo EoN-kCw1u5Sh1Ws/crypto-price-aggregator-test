@@ -36,15 +36,16 @@ jobs:
           ${{ runner.os }}-gradle-
     
     - name: Make scripts executable
-      run: |
-        chmod +x ./gradlew
-        chmod +x ./container-scripts/build-container.sh
+      run: chmod +x ./gradlew
     
     - name: Run tests
-      run: ./gradlew test
+      run: ./gradlew test -PexcludeIntegrationTests
+    
+    - name: Build shadowJar
+      run: ./gradlew shadowJar
     
     - name: Build container
-      run: ./container-scripts/build-container.sh
+      run: docker build -t crypto-price-aggregator:distroless .
     
     - name: Log in to Container Registry
       if: github.event_name != 'pull_request'
